@@ -1,8 +1,8 @@
 def add(a, b):
-    return a - b  # bug: subtraction instead of addition
+    return a + b
 
 def is_even(n):
-    return n % 2 == 1  # bug: this actually checks for odd
+    return n % 2 == 0
 
 def get_max(numbers):
     if len(numbers) == 0:
@@ -11,7 +11,9 @@ def get_max(numbers):
     for n in numbers:
         if n > largest:
             largest = n
-    return largest  # this one is actually correct — a control case
+    return largest
 
 def average(numbers):
-    return sum(numbers) / len(numbers)  # bug: no check for empty list (ZeroDivisionError)
+    if len(numbers) == 0:
+        return None
+    return sum(numbers) / len(numbers)
